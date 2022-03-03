@@ -4,7 +4,7 @@ Increasing Maize Leaf Disease Dataset Using the Contrast Technique
 
 # Contributors
 
-> The project
+> The names below are Group 8 students (BBIT 4 Taita Taveta University, Academic year 2021/2022) who did a project on increase the maize leaf disease datasets. The supervisors name is **_Dr.Peter Ochieng_**.
 
 - David Kinyanjui TU01-BE213-0400/2017
 - Celestine Nyambiki Onenga TU01-BE213-0418/2017
@@ -227,4 +227,26 @@ model.fit(x_train,y_train,epochs=10)
 
 ```
 model.evaluate(x_test_scaled,y_test)
+```
+
+### Prediction
+
+- In this section we gave our image some data to predict whether the image was augmented or original
+
+```
+prediction=model.predict(t_scale)
+score=tf.nn.softmax(prediction[2]) #Picks the set of values in the tensor and picks the biggest on
+print(score)
+print(np.argmax(score)) #Returns the index of the max value
+```
+
+### Saving of the mode
+
+- In this section we saved the model so that it can be used in other applications
+
+```
+prediction=model.predict(t_scale)
+score=tf.nn.softmax(prediction[2]) #Picks the set of values in the tensor and picks the biggest on
+print(score)
+print(np.argmax(score)) #Returns the index of the max value
 ```
